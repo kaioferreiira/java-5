@@ -14,14 +14,14 @@ public class QuoteServiceImpl implements QuoteService {
 
 	@Override
 	public Quote getQuote() {
-		List <Quote> quote =  quoteRepository.findAll();
+		List<Quote> quote =  quoteRepository.findAll();
 		Random aleatorio = new Random();
 		return quote.get(aleatorio.nextInt(18306) - 1);
 	}
 
 	@Override
 	public Quote getQuoteByActor(String actorName) {
-		List<Quote> quotes = quoteRepository.findAllByActorContains(actorName);
+		List<Quote> quotes = quoteRepository.findQuoteByActor(actorName);
 		int tamanho = quotes.size();
 		Random aleatorio = new Random();
 		return quotes.get(aleatorio.nextInt(tamanho) -1);
