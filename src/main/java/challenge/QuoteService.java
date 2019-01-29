@@ -1,6 +1,6 @@
 package challenge;
 
-public interface QuoteService  {
+public interface QuoteService   {
 
 	Quote getQuote();
 

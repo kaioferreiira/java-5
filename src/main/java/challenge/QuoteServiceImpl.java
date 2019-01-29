@@ -12,7 +12,6 @@ public class QuoteServiceImpl implements QuoteService {
 	@Autowired
 	private QuoteRepository quoteRepository;
 
-	//    Retorna uma frase aleatória de qualquer ator.
 	@Override
 	public Quote getQuote() {
 		List <Quote> quote =  quoteRepository.findAll();
@@ -20,10 +19,8 @@ public class QuoteServiceImpl implements QuoteService {
 		return quote.get(aleatorio.nextInt(18306) - 1);
 	}
 
-	//    Retorna uma frase aleatória do ator passado como parâmetro.
 	@Override
 	public Quote getQuoteByActor(String actorName) {
-
 		List<Quote> quotes = quoteRepository.findAllByActorContains(actorName);
 		int tamanho = quotes.size();
 		Random aleatorio = new Random();
